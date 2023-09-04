@@ -1,0 +1,35 @@
+@prefix : <http://www.example.org#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+
+:Node1 :hasLabel "Node1".
+:Node1 :hasLabel "Noden1"@De.
+:Node1 a :Type1.
+:Node1 :noEmployees "100"^^xsd:integer.
+:Node1 :hasAddress [:street "John B"^^xsd:string; :number "50"^^xsd:integer; ].
+:Node1 :hasEmployees (:John :James :Anna ).
+:Node1 owl:sameAs :SameAsNode1.
+:Node1 :linked _:xy.
+_:xy a :HelpNodeType1.
+:Node2 :hasLabel "Node 2".
+:Node2 a :Type2.
+:SameAsNode1 :hasLabel "".
+:ListElement1 :hasLabel "".
+:ListElement1  :ListContainer_VRX.
+:ListContainer_VRX a :ListCont1.
+:ListContainer_VRX rdfs:member :ListElement1, :smth, :anotherNode.
+:ListElement1 :index 1.
+:smth :index 2.
+:anotherNode :index 3.
+:Dddannb :hasLabel "".
+:Dddannb a schema:Person.
+:smth :hasLabel "".
+:smth  :ListContainer_VRX.
+:anotherNode :hasLabel "".
+:anotherNode  :ListContainer_VRX.
+_:xy :address "aaa"^^xsd:string.
+_:xy :no "200"^^xsd:integer.
+_:xy :state "vbca"^^xsd:string.
+_:xy :linked :Node2.
+_:xy :listLinker1 :ListContainer_VRX.
