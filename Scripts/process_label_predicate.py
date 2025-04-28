@@ -1,7 +1,7 @@
 import random
 
 readFile = open("D:\\Andrei\\ModellingTools\\Graph_Modelling_Tool\\Scripts\\label_value.txt", "r")
-writeFile = open("D:\\Andrei\\ModellingTools\\Graph_Modelling_Tool\\Scripts\\processed_uri.txt", "w")
+writeFile = open("D:\\Andrei\\ModellingTools\\Graph_Modelling_Tool\\Scripts\\processed_local_identifier.txt", "w")
 rawLabel = readFile.read()
 
 wordCounter = 0

@@ -1,0 +1,3 @@
+CompanyMap
+http://example.com/CompanyGraph
+Who are the suppliers of AceTech based on the given knowledge graph?

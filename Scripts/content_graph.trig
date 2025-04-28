@@ -1,0 +1,40 @@
+@prefix : <http://www.example.org#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://www.schema.org#>.
+
+:AndreiGraph
+{
+:Andrei :hasLabel "Andrei Chis".
+:Andrei :sonOf :Dora.
+:Andrei a schema:Person.
+:Andrei :hasAge "27"^^xsd:integer.
+:Andrei :worksFor :AceV.
+:Andrei :studiesAt :UBB.
+:Andrei :livesAt _:Nd124.
+:AceV :hasLabel "Ace Vision".
+:UBB :hasLabel "Universitatea Babes-Bolyai".
+:AddressPlace :hasLabel "".
+:AddressPlace :addressStreet "MK 4E"^^xsd:string.
+:AddressPlace :someContRel1 :Cont1.
+:Cont1 :hasLabel .
+:Cont1 rdfs:member :Node1, :Node2.
+:Node1 :index 1.
+:Node2 :index 2.
+:Node1 :hasLabel "".
+:Node1 :relInside :Node2.
+:Node2 :hasLabel "".
+_:Nd124 :hasAddressPlace :AddressPlace.
+schema:Person rdfs:subClassOf schema:Thing.
+schema:Person rdfs:subClassOf :LivingSpecies.
+:LivingSpecies rdfs:subClassOf schema:Thing.
+: rdfs:subClassOf schema:Thing.
+: rdfs:subClassOf :Type1.
+:Type1 rdfs:subClassOf schema:Thing.
+:hasAge rdfs:subPropertyOf schema:Property.
+:hasAge rdfs:domain schema:Person.
+:hasAge rdfs:range xsd:integer.
+:hasAge rdfs:subPropertyOf :PersonalIdentificationProp.
+:PersonalIdentificationProp rdfs:subPropertyOf schema:Property.
+}

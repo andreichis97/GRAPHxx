@@ -1,0 +1,24 @@
+To determine which companies would be affected in case AceTech goes bankrupt, we need to look for RDF triples that indicate business relationships involving AceTech. Specifically, we should look for properties that suggest a dependency or contractual relationship, such as `hasSupplier`, `hasContracted`, and `contractedCompany`.
+
+From the provided RDF data, we can extract the following relevant triples:
+
+1. `http://www.andreichis.ro#AceTech,http://www.andreichis.ro#hasSupplier,http://www.andreichis.ro#DDS`
+2. `http://www.andreichis.ro#AceTech,http://www.andreichis.ro#hasSupplier,http://www.andreichis.ro#Cisco`
+3. `http://www.andreichis.ro#LinkDis,http://www.andreichis.ro#hasContracted,_:node4`
+4. `http://www.andreichis.ro#RakioRob,http://www.andreichis.ro#hasContracted,_:node5`
+5. `_:node4,http://www.andreichis.ro#contractedCompany,http://www.andreichis.ro#AceTech`
+6. `_:node5,http://www.andreichis.ro#contractedCompany,http://www.andreichis.ro#AceTech`
+
+From these triples, we can infer the following relationships:
+
+- AceTech has suppliers DDS and Cisco. This means that DDS and Cisco are companies that provide products or services to AceTech. If AceTech goes bankrupt, these suppliers might be affected due to the loss of a client and potential unpaid debts.
+- LinkDis and RakioRob have contracted AceTech for development projects. This indicates that AceTech has business contracts with these companies to develop a GPS tracking system and AI software, respectively. If AceTech goes bankrupt, these contracts might be at risk, potentially affecting LinkDis and RakioRob due to the disruption of their development plans and possible financial losses.
+
+Therefore, the companies that would be affected in case AceTech goes bankrupt, based on the provided RDF data, are:
+
+- D&D Solutions (DDS)
+- Cisco Systems (Cisco)
+- Linkstar Distribution (LinkDis)
+- Rakio Robotics (RakioRob)
+
+These companies have either a supplier relationship or a contractual development relationship with AceTech.

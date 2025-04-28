@@ -1,0 +1,393 @@
+[
+    {
+        "@id": "http://www.s.org#parent",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.dbr.org#Cluj_Napoca",
+        "@type": [
+            "http://www.s.org#City"
+        ],
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Cluj-Napoca@ro"
+            },
+            {
+                "@value": "Koloszvar@hu"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#Dan",
+        "@type": [
+            "http://www.s.org#Person"
+        ],
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.example.org#likes": [
+            {
+                "@id": "http://www.dbr.org#The_Terminator"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Dan B"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#Patrik",
+        "@type": [
+            "http://www.s.org#Person"
+        ],
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.s.org#homeLocation": [
+            {
+                "@id": "http://www.dbr.org#Cluj_Napoca"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Patrik B."
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#streetAddress",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#PostalAddress"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#string"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#address",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#Organization"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.s.org#PostalAddress"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.dbr.org#Babes-Bolyai_UNiversity",
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.s.org#address": [
+            {
+                "@id": "_:n1d8593e127b94e08b3b8bf14268dc18db1"
+            }
+        ],
+        "http://www.s.org#numberOfEmployees": [
+            {
+                "@value": 3000
+            }
+        ]
+    },
+    {
+        "@id": "_:n1d8593e127b94e08b3b8bf14268dc18db1",
+        "http://www.s.org#addressLocality": [
+            {
+                "@id": "http://www.dbr.org#Cluj_Napoca"
+            }
+        ],
+        "http://www.s.org#streetAddress": [
+            {
+                "@value": "Kogalniceanu Nr 1"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.dbr.org#The_Terminator",
+        "@type": [
+            "http://www.s.org#Movie"
+        ],
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#EducationalOrganization",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            },
+            {
+                "@id": "http://www.s.org#Organization"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#children",
+        "http://www.owl.org#inverseOf": [
+            {
+                "@id": "http://www.s.org#parent"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#Person"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.s.org#Person"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#Person",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#Movie",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            },
+            {
+                "@id": "http://www.s.org#CreativeWork"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#involvedWith",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#numberOfEmployees",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#Organization"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#City",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            },
+            {
+                "@id": "http://www.s.org#Place"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#homeLocation",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#Person"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.s.org#Place"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#Robert",
+        "@type": [
+            "http://www.s.org#Person"
+        ],
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.s.org#children": [
+            {
+                "@id": "http://www.example.org#Dan"
+            },
+            {
+                "@id": "http://www.example.org#Patrik"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Robert B"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#Place",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#Organization",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#PostalAddress",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#addressLocality",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#PostalAddress"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.s.org#Place"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#worksFor",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#Person"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.s.org#Organization"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+            {
+                "@id": "http://www.example.org#involvedWith"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#Susana",
+        "@type": [
+            "http://www.s.org#Person"
+        ],
+        "http://www.example.org#hasLabel": [
+            {
+                "@value": ""
+            }
+        ],
+        "http://www.s.org#children": [
+            {
+                "@id": "http://www.example.org#Robert"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Susana B"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#likes",
+        "http://www.w3.org/2000/01/rdf-schema#domain": [
+            {
+                "@id": "http://www.s.org#Person"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#range": [
+            {
+                "@id": "http://www.s.org#CreativeWork"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Property"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.s.org#CreativeWork",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "http://www.schema.org#Thing"
+            }
+        ]
+    }
+]

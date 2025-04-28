@@ -2,51 +2,99 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix : <http://www.example.org#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org#>.
 
-:Node1 :hasLabel "Node1".
-:Node1 :hasLabel "Noden1"@De.
-:Node1 a :Type1.
-:Node1 :noEmployees "100"^^xsd:integer.
-:Node1 :noEmployees "100"^^xsd:integer.
-:Node1 :hasAddress [:street "John B"^^xsd:string; :number "50"^^xsd:integer; ].
-:Node1 :hasEmployees (:John :James :Anna ).
-:Node1 owl:sameAs :SameAsNode1.
-:Node1 :linked _:xy.
-_:xy a :HelpNodeType1.
-:Node2 :hasLabel "Node 2".
-:Node2 a :Type2.
-:SameAsNode1 :hasLabel "".
-:ListElement1 :hasLabel "".
-:ListElement1  :ListContainer_VRX.
-:ListContainer_VRX a :ListCont1.
-:ListContainer_VRX rdfs:member :ListElement1, :smth, :anotherNode.
-:ListElement1 :index 1.
-:smth :index 2.
-:anotherNode :index 3.
-:Dddannb :hasLabel "".
-:Dddannb a schema:Person.
-:Dddannb a schema:Person.
-:smth :hasLabel "".
-:smth  :ListContainer_VRX.
-:ListContainer_VRX a :ListCont1.
-:ListContainer_VRX rdfs:member :ListElement1, :smth, :anotherNode.
-:ListElement1 :index 1.
-:smth :index 2.
-:anotherNode :index 3.
-:anotherNode :hasLabel "".
-:anotherNode  :ListContainer_VRX.
-:ListContainer_VRX a :ListCont1.
-:ListContainer_VRX rdfs:member :ListElement1, :smth, :anotherNode.
-:ListElement1 :index 1.
-:smth :index 2.
-:anotherNode :index 3.
-_:xy :address "aaa"^^xsd:string.
-_:xy :no "200"^^xsd:integer.
-_:xy :state "vbca"^^xsd:string.
-_:xy :linked :Node2.
-_:xy :listLinker1 :ListContainer_VRX.
-:ListContainer_VRX a :ListCont1.
-:ListContainer_VRX rdfs:member :ListElement1, :smth, :anotherNode.
-:ListElement1 :index 1.
-:smth :index 2.
-:anotherNode :index 3.
+:AceTech :hasLabel "AceTech".
+:AceTech :hasLabel "AceTech"@fr.
+:AceTech a schema:Corporation.
+:AceTech schema:legalName "AceTech"^^xsd:string.
+:AceTech schema:legalName "AceTech"^^xsd:string.
+:AceTech schema:numberOfEmployees "1500"^^xsd:integer.
+:AceTech schema:numberOfEmployees "1500"^^xsd:integer.
+:AceTech schema:address "Some Street, No. 1"^^xsd:string.
+:AceTech schema:address "Some Street, No. 1"^^xsd:string.
+:AceTech a schema:Corporation.
+:AceTech a :LegalEntity.
+:AceTech :hasSupplier :Cisco.
+:AceTech :hasAuditors :AuditorsList.
+:AuditorsList :hasLabel :AuditorsList.
+:AuditorsList rdfs:member :Person5, :Person6.
+:Person5 :index 1.
+:Person6 :index 2.
+:AceTech schema:founder :Person1.
+:AceTech :hasCEO :Person2.
+:AceTech :hasSupplier :DDS.
+:AceTech schema:legalName "AceTech"^^xsd:string.
+:AceTech schema:numberOfEmployees "1500"^^xsd:integer.
+:AceTech schema:address "Some Street, No. 1"^^xsd:string.
+:AceTech :fulfillsContract :C149_23_03_2023_641106.
+:AceTech :fulfillsContract :C150_30_06_2023_752907.
+:C149_23_03_2023_641106 :hasLabel "".
+:C149_23_03_2023_641106 :forDevelopment :GPSSystem_19.
+:C149_23_03_2023_641106 :forDevelopment :GPSSystem_19.
+:C149_23_03_2023_641106 :hasValue [:currency "USD"^^xsd:string;  :RequirementsAnalysis;  :Design;  :Development;  :Testing; :contractedCompany :AceTech; :C149_23_03_2023_641106 a :BusinessContract.
+:C149_23_03_2023_641106 :forDevelopment :GPSSystem_19.
+:C149_23_03_2023_641106 :currencyValuePair _:SomeNode.
+:C149_23_03_2023_641106 :hasProjectPhases :PhasesList.
+:PhasesList :hasLabel :PhasesList.
+:PhasesList rdfs:member :RequirementsAnalysis, :Design, :Development, :Testing.
+:RequirementsAnalysis :index 1.
+:Design :index 2.
+:Development :index 3.
+:Testing :index 4.
+:LinkDis :hasLabel "".
+:LinkDis :hasContracted :C149_23_03_2023_641106.
+:GPSSystem_19 :hasLabel "".
+:RequirementsAnalysis :hasLabel "RequirementsAnalysis".
+:PhasesList rdfs:member :RequirementsAnalysis, :Design, :Development, :Testing.
+:RequirementsAnalysis :index 1.
+:Design :index 2.
+:Development :index 3.
+:Testing :index 4.
+:Design :hasLabel "Design".
+:PhasesList rdfs:member :RequirementsAnalysis, :Design, :Development, :Testing.
+:RequirementsAnalysis :index 1.
+:Design :index 2.
+:Development :index 3.
+:Testing :index 4.
+:Development :hasLabel "Development".
+:PhasesList rdfs:member :RequirementsAnalysis, :Design, :Development, :Testing.
+:RequirementsAnalysis :index 1.
+:Design :index 2.
+:Development :index 3.
+:Testing :index 4.
+:Testing :hasLabel "Testing".
+:PhasesList rdfs:member :RequirementsAnalysis, :Design, :Development, :Testing.
+:RequirementsAnalysis :index 1.
+:Design :index 2.
+:Development :index 3.
+:Testing :index 4.
+:Cisco :hasLabel "Cisco Systems".
+:DDS :hasLabel "DDS".
+:DDS :activeInBusinessArea "Hardware Supply"^^xsd:string.
+:DDS :activeInBusinessArea "Hardware Maintenance"^^xsd:string.
+:Person5 :hasLabel "Person5".
+:AuditorsList rdfs:member :Person5, :Person6.
+:Person5 :index 1.
+:Person6 :index 2.
+:Person6 :hasLabel "Person6".
+:AuditorsList rdfs:member :Person5, :Person6.
+:Person5 :index 1.
+:Person6 :index 2.
+:Person1 :hasLabel "Person1".
+:Person2 :hasLabel "Person2".
+:C150_30_06_2023_752907 :hasLabel "".
+:C150_30_06_2023_752907 :forDevelopment :AISoft1.
+:RakioRob :hasLabel "".
+:RakioRob :hasContracted :C150_30_06_2023_752907.
+:AISoft1 :hasLabel "AI Software".
+_:SomeNode :value "5000000"^^xsd:float.
+_:SomeNode :currency "USD"^^xsd:string.
+schema:Corporation rdfs:subClassOf schema:Thing.
+:BusinessContract rdfs:subClassOf schema:Thing.
+:LegalEntity rdfs:subClassOf schema:Thing.
+:AuditingGroup rdfs:subClassOf schema:Thing.

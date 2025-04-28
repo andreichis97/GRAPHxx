@@ -1,6 +1,6 @@
 import requests
 
-readFile = open("D:\\Andrei\\ModellingTools\\Graph_Modelling_Tool\\Scripts\\repository_location.txt", "r")
+readFile = open("D:\\Andrei\\ModellingTools\\Graph_Modelling_Tool\\Scripts\\upload_and_query_prompt.txt", "r")
 lines = readFile.readlines()
 # Set the repository ID and graph URI
 repositoryID = lines[0].strip()
