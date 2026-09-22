@@ -1,0 +1,95 @@
+[
+    {
+        "@id": "https://schema.org#Offer",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "https://schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "https://schema.org#Hospital",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "https://schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "https://schema.org#Service",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+            {
+                "@id": "https://schema.org#Thing"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#StJohnHospital",
+        "@type": [
+            "https://schema.org#Hospital"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "St. John Hospital"
+            }
+        ],
+        "https://schema.org#email": [
+            {
+                "@type": "http://www.w3.org/2001/XMLSchema#string",
+                "@value": "office@stjohnhospital.com"
+            }
+        ],
+        "https://schema.org#offers": [
+            {
+                "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b1"
+            }
+        ],
+        "https://schema.org#url": [
+            {
+                "@type": "http://www.w3.org/2001/XMLSchema#string",
+                "@value": "https://www.stjohnhospital.com"
+            }
+        ]
+    },
+    {
+        "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b1",
+        "@type": [
+            "https://schema.org#Offer"
+        ],
+        "https://schema.org#currency": [
+            {
+                "@type": "http://www.w3.org/2001/XMLSchema#string",
+                "@value": "USD"
+            }
+        ],
+        "https://schema.org#itemOffered": [
+            {
+                "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b2"
+            }
+        ],
+        "https://schema.org#price": [
+            {
+                "@type": "http://www.w3.org/2001/XMLSchema#decimal",
+                "@value": "300"
+            }
+        ]
+    },
+    {
+        "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b2",
+        "@type": [
+            "https://schema.org#Service"
+        ],
+        "https://schema.org#category": [
+            {
+                "@type": "http://www.w3.org/2001/XMLSchema#string",
+                "@value": "Screening services"
+            }
+        ],
+        "https://schema.org#name": [
+            {
+                "@type": "http://www.w3.org/2001/XMLSchema#string",
+                "@value": "Mental disease screening"
+            }
+        ]
+    }
+]

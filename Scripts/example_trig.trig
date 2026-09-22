@@ -1,0 +1,39 @@
+@prefix ex:     <https://example.org/> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:ExampleGraph {
+    ex:Alice
+        rdf:type schema:Person ;
+        rdfs:label "Alice Popescu"@en ;
+        schema:name "Alice Popescu"^^xsd:string ;
+        schema:jobTitle "Software Engineer"^^xsd:string ;
+        schema:worksFor ex:TechCorp ;
+        schema:knows ex:Bob ;
+        schema:homeLocation ex:ClujNapoca ;
+        ex:worksOn ex:ProjectX .
+
+    ex:Bob
+        rdf:type schema:Person ;
+        schema:name "Bob Ionescu"^^xsd:string ;
+        schema:jobTitle "Project Manager"^^xsd:string ;
+        schema:worksFor ex:TechCorp ;
+        ex:worksOn ex:ProjectX .
+
+    ex:TechCorp
+        rdf:type schema:Organization ;
+        schema:name "TechCorp SRL"^^xsd:string ;
+        schema:location ex:ClujNapoca .
+
+    ex:ClujNapoca
+        rdf:type schema:City ;
+        schema:name "Cluj-Napoca"^^xsd:string .
+
+    ex:ProjectX
+        rdf:type schema:Project ;
+        schema:name "Knowledge Graph Platform"^^xsd:string ;
+        schema:description
+            "A platform for managing organizational knowledge."^^xsd:string .
+}

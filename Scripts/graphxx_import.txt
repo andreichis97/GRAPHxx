@@ -1,0 +1,22 @@
+PREFIX|:|http://www.example.org#
+PREFIX|xsd:|http://www.w3.org/2001/XMLSchema#
+PREFIX|rdf:|http://www.w3.org/1999/02/22-rdf-syntax-ns#
+PREFIX|rdfs:|http://www.w3.org/2000/01/rdf-schema#
+PREFIX|schema:|https://schema.org/
+PREFIX|brh:|http://example.org/brain-health#
+NODE|IRI|ThingIdentifier|:DM_Logistics|:|DM_Logistics
+NODE|IRI|ThingIdentifier|:John_Reyes|:|John_Reyes
+NODE|IRI|ThingIdentifier|:Los_Angeles|:|Los_Angeles
+NODE|IRI|ThingIdentifier|:Regional_manager|:|Regional_manager
+NODE|IRI|ThingIdentifier|brh:Patient_eleanor_reyes|brh:|Patient_eleanor_reyes
+NODE|BNODE|HelperNode|node1|-|node1
+NODE|IRI|ThingType|schema:Person|schema:|Person
+ATTRIBUTE|brh:Patient_eleanor_reyes|ThingIdentifier|:age|:|age|55|xsd:integer|-
+ATTRIBUTE|brh:Patient_eleanor_reyes|ThingIdentifier|:height|:|height|168.0|xsd:float|-
+ATTRIBUTE|brh:Patient_eleanor_reyes|ThingIdentifier|rdfs:label|rdfs:|label|Eleanor Reyes|-|-
+EDGE|brh:Patient_eleanor_reyes|ThingIdentifier|:John_Reyes|ThingIdentifier|:marriedTo|:|marriedTo|GENERIC
+EDGE|brh:Patient_eleanor_reyes|ThingIdentifier|node1|HelperNode|:works|:|works|GENERIC
+EDGE|brh:Patient_eleanor_reyes|ThingIdentifier|schema:Person|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|node1|HelperNode|:Los_Angeles|ThingIdentifier|:city|:|city|GENERIC
+EDGE|node1|HelperNode|:DM_Logistics|ThingIdentifier|:company|:|company|GENERIC
+EDGE|node1|HelperNode|:Regional_manager|ThingIdentifier|:role|:|role|GENERIC

@@ -1,0 +1,13 @@
+@prefix : <http://www.example.org#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <https://schema.org/>.
+@prefix brh: <http://example.org/brain-health#>.
+
+brh:Patient_eleanor_reyes a schema:Person;
+	:age "55"^^xsd:integer;
+	:height "168"^^xsd:float;
+	:works [:company :DM_Logistics; :role :Regional_manager; :city :Los_Angeles];
+	rdfs:label "Eleanor Reyes";
+	:marriedTo :John_Reyes.

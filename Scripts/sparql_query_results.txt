@@ -1,0 +1,10 @@
+Repository: fictional_companies
+Operation: CONSTRUCT
+
+Triples returned: 5
+
+<http://example.org/business#AnaPopescu> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
+<http://example.org/business#DanPetrescu> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
+<http://example.org/business#ElenaMarin> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
+<http://example.org/business#IrinaDobre> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
+<http://example.org/business#VictorStan> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .

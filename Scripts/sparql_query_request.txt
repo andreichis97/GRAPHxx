@@ -1,0 +1,11 @@
+fictional_companies
+PREFIX ex: <http://example.org/business#>
+CONSTRUCT
+{
+    ?s ex:keyAsset ?o.
+}
+WHERE
+{
+    ?s ex:worksFor ?x.
+    ?x ex:providesServicesTo ?o.
+}
