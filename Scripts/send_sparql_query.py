@@ -2,6 +2,9 @@
 
 Usage: python send_sparql_query.py --request-file sparql_query_request.txt
 The UTF-8 request contains a repository name on line 1 and complete SPARQL below.
+An optional HTTP(S) GraphDB base URL goes on the last non-empty line, after the
+query. It overrides --server-url (also available as --graphdb-url). If omitted,
+the command-line URL or editable DEFAULT_GRAPHDB_URL below is used.
 Results overwrite sparql_query_results.txt beside this script. Supports SPARQL
 1.1 query and update forms, including semicolon-separated update operations.
 """
@@ -10,14 +13,18 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from paths import SCRIPTS_DIR
 import re
 import sys
+from urllib.parse import urlsplit
 
 from rdflib import BNode, Graph, Literal, URIRef
 from rdflib.plugins.sparql.parser import parseQuery, parseUpdate
 from SPARQLWrapper import INSERT, JSON, POST, RDFXML, SPARQLWrapper
 
-RESULTS_PATH = Path(__file__).resolve().with_name("sparql_query_results.txt")
+RESULTS_PATH = SCRIPTS_DIR / "sparql_query_results.txt"
+# Change this base URL to use a different GraphDB instance by default.
+DEFAULT_GRAPHDB_URL = "http://localhost:7200"
 
 
 def save_result(text: str) -> bool:
@@ -35,15 +42,30 @@ class ResultParser(argparse.ArgumentParser):
         super().error(message)
 
 
-def read_request(path: str) -> tuple[str, str]:
+def read_request(path: str) -> tuple[str, str, str | None]:
     text = Path(path).read_text(encoding="utf-8-sig")
     repository, separator, query = text.partition("\n")
     repository = repository.strip()
+    lines = query.rstrip().splitlines()
+    server_url = None
+    if lines and re.match(r"https?://", lines[-1].strip(), re.IGNORECASE):
+        server_url = lines.pop().strip()
+        query = "\n".join(lines)
     if not separator or not query.strip():
         raise ValueError("Enter a repository on line 1 and the complete SPARQL query below it.")
     if not re.fullmatch(r"[A-Za-z0-9_-]+", repository):
         raise ValueError("Repository names may contain only letters, digits, underscores and hyphens.")
-    return repository, query
+    return repository, query, server_url
+
+
+def normalize_server_url(value: str) -> str:
+    value = value.strip().rstrip("/")
+    parsed = urlsplit(value)
+    if (parsed.scheme not in ("http", "https") or not parsed.hostname
+            or parsed.query or parsed.fragment
+            or any(c.isspace() for c in value)):
+        raise ValueError("GraphDB URL must be an HTTP(S) base URL without a query or fragment.")
+    return value
 
 
 def classify(query: str) -> str:
@@ -138,14 +160,16 @@ def execute(repository: str, query: str, server_url: str, timeout: int) -> str:
 def main() -> int:
     parser = ResultParser(description=__doc__)
     parser.add_argument("--request-file", required=True)
-    parser.add_argument("--server-url", default="http://localhost:7200")
+    parser.add_argument("--server-url", "--graphdb-url", default=DEFAULT_GRAPHDB_URL,
+                        help="GraphDB base URL; defaults to DEFAULT_GRAPHDB_URL in this script. The request-file URL takes precedence.")
     parser.add_argument("--timeout", type=int, default=120)
     args = parser.parse_args()
     try:
         if args.timeout < 1:
             raise ValueError("Timeout must be positive.")
-        repository, query = read_request(args.request_file)
-        output = execute(repository, query, args.server_url, args.timeout)
+        repository, query, request_url = read_request(args.request_file)
+        server_url = normalize_server_url(request_url or args.server_url)
+        output = execute(repository, query, server_url, args.timeout)
         success = True
     except Exception as exc:
         output = f"ERROR: {str(exc).strip() or type(exc).__name__}"

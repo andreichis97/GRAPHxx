@@ -1,37 +1,8 @@
 Status: answered
 
-To answer which employees of NovaTech Solutions work on projects commissioned by BlueHarbor Logistics, we proceed as follows:
+Based on the supplied evidence, there is no information indicating that Blue Harbor Logistics (http://example.org/business#BlueHarbor) has any clients. The available evidence shows that Blue Harbor Logistics commissions projects such as Eco Warehouse Initiative and Smart Fleet Optimization [E11, E33], and receives services from companies like GreenGrid Energy and NovaTech Solutions [E17, E30]. However, there are no triples indicating that Blue Harbor Logistics provides services to or has clients of its own.
 
-- NovaTech Solutions is identified as http://example.org/business#NovaTech [entity_matches].
-- BlueHarbor Logistics is identified as http://example.org/business#BlueHarbor [entity_matches].
-- Projects commissioned by BlueHarbor Logistics are those with the triple ?project commissionedBy BlueHarbor.
-    - EcoWarehouse: <http://example.org/business#EcoWarehouse> <http://example.org/business#commissionedBy> <http://example.org/business#BlueHarbor> [E11].
-    - SmartFleet: <http://example.org/business#SmartFleet> <http://example.org/business#commissionedBy> <http://example.org/business#BlueHarbor> [E41].
-
-Now, we look for employees who:
-1. work for NovaTech Solutions, and
-2. work on EcoWarehouse or SmartFleet.
-
-From the evidence:
-
-- Elena Marin:
-    - worksFor NovaTech [E18]
-    - worksOn SmartFleet [E19]
-- Irina Dobre:
-    - worksFor NovaTech [E27]
-    - worksOn EcoWarehouse [E28]
-    - worksOn SmartFleet [E29]
-- Victor Stan:
-    - worksFor NovaTech [E55]
-    - worksOn SmartFleet [E56]
-
-Therefore, the employees of NovaTech Solutions who work on projects commissioned by BlueHarbor Logistics are:
-
-- Elena Marin
-- Irina Dobre
-- Victor Stan
-
-Supporting evidence: [E11], [E18], [E19], [E27], [E28], [E29], [E41], [E55], [E56].
+Therefore, evidence is insufficient to identify any clients of Blue Harbor Logistics.
 
 Evidence:
 [E1] <http://example.org/business#AnaPopescu> <http://example.org/business#worksFor> <http://example.org/business#GreenGrid> .
@@ -47,54 +18,42 @@ Evidence:
 [E11] <http://example.org/business#EcoWarehouse> <http://example.org/business#commissionedBy> <http://example.org/business#BlueHarbor> .
 [E12] <http://example.org/business#EcoWarehouse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Project> .
 [E13] <http://example.org/business#EcoWarehouse> <http://www.w3.org/2000/01/rdf-schema#label> "Eco Warehouse Initiative" .
-[E14] <http://example.org/business#ElenaMarin> <http://example.org/business#jobTitle> "Technology Director" .
-[E15] <http://example.org/business#ElenaMarin> <http://example.org/business#leads> <http://example.org/business#SmartFleet> .
-[E16] <http://example.org/business#ElenaMarin> <http://example.org/business#manages> <http://example.org/business#IrinaDobre> .
-[E17] <http://example.org/business#ElenaMarin> <http://example.org/business#manages> <http://example.org/business#VictorStan> .
-[E18] <http://example.org/business#ElenaMarin> <http://example.org/business#worksFor> <http://example.org/business#NovaTech> .
-[E19] <http://example.org/business#ElenaMarin> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
-[E20] <http://example.org/business#ElenaMarin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
-[E21] <http://example.org/business#ElenaMarin> <http://www.w3.org/2000/01/rdf-schema#label> "Elena Marin" .
-[E22] <http://example.org/business#GreenGrid> <http://example.org/business#providesServicesTo> <http://example.org/business#BlueHarbor> .
-[E23] <http://example.org/business#GreenGrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Company> .
-[E24] <http://example.org/business#GreenGrid> <http://www.w3.org/2000/01/rdf-schema#label> "GreenGrid Energy" .
-[E25] <http://example.org/business#IrinaDobre> <http://example.org/business#collaboratesWith> <http://example.org/business#MihaiRadu> .
-[E26] <http://example.org/business#IrinaDobre> <http://example.org/business#jobTitle> "Data Analyst" .
-[E27] <http://example.org/business#IrinaDobre> <http://example.org/business#worksFor> <http://example.org/business#NovaTech> .
-[E28] <http://example.org/business#IrinaDobre> <http://example.org/business#worksOn> <http://example.org/business#EcoWarehouse> .
-[E29] <http://example.org/business#IrinaDobre> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
-[E30] <http://example.org/business#IrinaDobre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
-[E31] <http://example.org/business#IrinaDobre> <http://www.w3.org/2000/01/rdf-schema#label> "Irina Dobre" .
-[E32] <http://example.org/business#MihaiRadu> <http://example.org/business#jobTitle> "Logistics Coordinator" .
-[E33] <http://example.org/business#MihaiRadu> <http://example.org/business#worksFor> <http://example.org/business#BlueHarbor> .
-[E34] <http://example.org/business#MihaiRadu> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
-[E35] <http://example.org/business#MihaiRadu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
-[E36] <http://example.org/business#MihaiRadu> <http://www.w3.org/2000/01/rdf-schema#label> "Mihai Radu" .
-[E37] <http://example.org/business#NovaTech> <http://example.org/business#partnersWith> <http://example.org/business#GreenGrid> .
-[E38] <http://example.org/business#NovaTech> <http://example.org/business#providesServicesTo> <http://example.org/business#BlueHarbor> .
-[E39] <http://example.org/business#NovaTech> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Company> .
-[E40] <http://example.org/business#NovaTech> <http://www.w3.org/2000/01/rdf-schema#label> "NovaTech Solutions" .
-[E41] <http://example.org/business#SmartFleet> <http://example.org/business#commissionedBy> <http://example.org/business#BlueHarbor> .
-[E42] <http://example.org/business#SmartFleet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Project> .
-[E43] <http://example.org/business#SmartFleet> <http://www.w3.org/2000/01/rdf-schema#label> "Smart Fleet Optimization" .
-[E44] <http://example.org/business#SofiaIonescu> <http://example.org/business#collaboratesWith> <http://example.org/business#DanPetrescu> .
-[E45] <http://example.org/business#SofiaIonescu> <http://example.org/business#collaboratesWith> <http://example.org/business#ElenaMarin> .
-[E46] <http://example.org/business#SofiaIonescu> <http://example.org/business#jobTitle> "Operations Director" .
-[E47] <http://example.org/business#SofiaIonescu> <http://example.org/business#manages> <http://example.org/business#MihaiRadu> .
-[E48] <http://example.org/business#SofiaIonescu> <http://example.org/business#worksFor> <http://example.org/business#BlueHarbor> .
-[E49] <http://example.org/business#SofiaIonescu> <http://example.org/business#worksOn> <http://example.org/business#EcoWarehouse> .
-[E50] <http://example.org/business#SofiaIonescu> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
-[E51] <http://example.org/business#SofiaIonescu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
-[E52] <http://example.org/business#SofiaIonescu> <http://www.w3.org/2000/01/rdf-schema#label> "Sofia Ionescu" .
-[E53] <http://example.org/business#VictorStan> <http://example.org/business#collaboratesWith> <http://example.org/business#AnaPopescu> .
-[E54] <http://example.org/business#VictorStan> <http://example.org/business#jobTitle> "Software Engineer" .
-[E55] <http://example.org/business#VictorStan> <http://example.org/business#worksFor> <http://example.org/business#NovaTech> .
-[E56] <http://example.org/business#VictorStan> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
-[E57] <http://example.org/business#VictorStan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
-[E58] <http://example.org/business#VictorStan> <http://www.w3.org/2000/01/rdf-schema#label> "Victor Stan" .
-[E59] <http://example.org/business#commissionedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
-[E60] <http://example.org/business#partnersWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/business#Company> .
-[E61] <http://example.org/business#partnersWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
-[E62] <http://example.org/business#providesServicesTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/business#Company> .
-[E63] <http://example.org/business#providesServicesTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
-[E64] <http://example.org/business#worksFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
+[E14] <http://example.org/business#ElenaMarin> <http://example.org/business#leads> <http://example.org/business#SmartFleet> .
+[E15] <http://example.org/business#ElenaMarin> <http://example.org/business#worksFor> <http://example.org/business#NovaTech> .
+[E16] <http://example.org/business#ElenaMarin> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
+[E17] <http://example.org/business#GreenGrid> <http://example.org/business#providesServicesTo> <http://example.org/business#BlueHarbor> .
+[E18] <http://example.org/business#GreenGrid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Company> .
+[E19] <http://example.org/business#GreenGrid> <http://www.w3.org/2000/01/rdf-schema#label> "GreenGrid Energy" .
+[E20] <http://example.org/business#IrinaDobre> <http://example.org/business#collaboratesWith> <http://example.org/business#MihaiRadu> .
+[E21] <http://example.org/business#IrinaDobre> <http://example.org/business#worksFor> <http://example.org/business#NovaTech> .
+[E22] <http://example.org/business#IrinaDobre> <http://example.org/business#worksOn> <http://example.org/business#EcoWarehouse> .
+[E23] <http://example.org/business#IrinaDobre> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
+[E24] <http://example.org/business#MihaiRadu> <http://example.org/business#jobTitle> "Logistics Coordinator" .
+[E25] <http://example.org/business#MihaiRadu> <http://example.org/business#worksFor> <http://example.org/business#BlueHarbor> .
+[E26] <http://example.org/business#MihaiRadu> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
+[E27] <http://example.org/business#MihaiRadu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
+[E28] <http://example.org/business#MihaiRadu> <http://www.w3.org/2000/01/rdf-schema#label> "Mihai Radu" .
+[E29] <http://example.org/business#NovaTech> <http://example.org/business#partnersWith> <http://example.org/business#GreenGrid> .
+[E30] <http://example.org/business#NovaTech> <http://example.org/business#providesServicesTo> <http://example.org/business#BlueHarbor> .
+[E31] <http://example.org/business#NovaTech> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Company> .
+[E32] <http://example.org/business#NovaTech> <http://www.w3.org/2000/01/rdf-schema#label> "NovaTech Solutions" .
+[E33] <http://example.org/business#SmartFleet> <http://example.org/business#commissionedBy> <http://example.org/business#BlueHarbor> .
+[E34] <http://example.org/business#SmartFleet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Project> .
+[E35] <http://example.org/business#SmartFleet> <http://www.w3.org/2000/01/rdf-schema#label> "Smart Fleet Optimization" .
+[E36] <http://example.org/business#SofiaIonescu> <http://example.org/business#collaboratesWith> <http://example.org/business#DanPetrescu> .
+[E37] <http://example.org/business#SofiaIonescu> <http://example.org/business#collaboratesWith> <http://example.org/business#ElenaMarin> .
+[E38] <http://example.org/business#SofiaIonescu> <http://example.org/business#jobTitle> "Operations Director" .
+[E39] <http://example.org/business#SofiaIonescu> <http://example.org/business#manages> <http://example.org/business#MihaiRadu> .
+[E40] <http://example.org/business#SofiaIonescu> <http://example.org/business#worksFor> <http://example.org/business#BlueHarbor> .
+[E41] <http://example.org/business#SofiaIonescu> <http://example.org/business#worksOn> <http://example.org/business#EcoWarehouse> .
+[E42] <http://example.org/business#SofiaIonescu> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
+[E43] <http://example.org/business#SofiaIonescu> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/business#Employee> .
+[E44] <http://example.org/business#SofiaIonescu> <http://www.w3.org/2000/01/rdf-schema#label> "Sofia Ionescu" .
+[E45] <http://example.org/business#VictorStan> <http://example.org/business#worksFor> <http://example.org/business#NovaTech> .
+[E46] <http://example.org/business#VictorStan> <http://example.org/business#worksOn> <http://example.org/business#SmartFleet> .
+[E47] <http://example.org/business#commissionedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
+[E48] <http://example.org/business#partnersWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/business#Company> .
+[E49] <http://example.org/business#partnersWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
+[E50] <http://example.org/business#providesServicesTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/business#Company> .
+[E51] <http://example.org/business#providesServicesTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .
+[E52] <http://example.org/business#worksFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/business#Company> .

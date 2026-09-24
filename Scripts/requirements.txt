@@ -1,0 +1,6 @@
+numpy
+openai
+pydantic
+rdflib
+requests
+SPARQLWrapper

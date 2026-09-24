@@ -1,10 +1,34 @@
-Repository: fictional_companies
-Operation: CONSTRUCT
+Repository: testing_graphxx
+Operation: SELECT
 
-Triples returned: 5
+Rows returned: 6
 
-<http://example.org/business#AnaPopescu> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
-<http://example.org/business#DanPetrescu> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
-<http://example.org/business#ElenaMarin> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
-<http://example.org/business#IrinaDobre> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
-<http://example.org/business#VictorStan> <http://example.org/business#keyAsset> <http://example.org/business#BlueHarbor> .
+Result 1
+  s: <http://www.example.org#Anna>
+  p: <http://www.example.org#knows>
+  o: <http://www.example.org#John>
+
+Result 2
+  s: <http://www.example.org#Anna>
+  p: <http://www.example.org#worksFor>
+  o: <http://www.example.org#RexCorp>
+
+Result 3
+  s: <http://www.example.org#RexCorp>
+  p: <http://www.example.org#locatedIn>
+  o: _:genid-d439606bf16f4b54809879f6bcda785b2718-node1
+
+Result 4
+  s: _:genid-d439606bf16f4b54809879f6bcda785b2718-node1
+  p: <http://www.example.org#city>
+  o: <http://www.example.org#LosAngeles>
+
+Result 5
+  s: _:genid-d439606bf16f4b54809879f6bcda785b2718-node1
+  p: <http://www.example.org#address>
+  o: "Martin Luther King Street"
+
+Result 6
+  s: <http://www.example.org#RobertMann>
+  p: <http://www.example.org#owns>
+  o: <http://www.example.org#RexCorp>

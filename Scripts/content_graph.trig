@@ -2,15 +2,18 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix schema: <https://schema.org/>.
 
-:SomeGraph
+:TGraph
 {
-:Anna :knows :John.
-:Anna :worksFor :RexCorp.
-:RexCorp :locatedIn _:node1.
-_:node1 :city :LosAngeles.
-_:node1 :address "Martin Luther King Street"^^xsd:string.
-:RobertMann :owns :RexCorp.
+_:node123 owl:unionOf ( :Person  :Organization ).
+:FriendsGroup rdfs:member :Mike.
+:FriendsGroup rdfs:member :Anna.
+:Tom a :Person.
+:Person rdfs:subClassOf rdfs:Resource.
+:Tom :knows :FriendsGroup.
+:hasChild owl:inverseOf :hasParent.
+:hasIdentifier a rdf:Property.
+_:node123 a owl:Class.
+:hasIdentifier rdfs:domain _:node123.
+:hasIdentifier rdfs:range :Identifier.
 }

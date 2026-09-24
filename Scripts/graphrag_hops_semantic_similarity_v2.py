@@ -20,6 +20,7 @@ import unicodedata
 from dataclasses import dataclass, field
 from difflib import SequenceMatcher
 from pathlib import Path
+from paths import SCRIPTS_DIR
 from typing import Callable, TypeVar
 from urllib.error import HTTPError, URLError
 from uuid import uuid4
@@ -33,7 +34,7 @@ from SPARQLWrapper import JSON, POST, SPARQLWrapper
 from prompts import entities_of_interest_extraction_prompt
 
 LOG = logging.getLogger(__name__)
-RESULTS_PATH = Path(__file__).resolve().with_name("graphrag_khops_results.txt")
+RESULTS_PATH = SCRIPTS_DIR / "graphrag_khops_results.txt"
 T = TypeVar("T")
 Triple = tuple[URIRef | BNode, URIRef, URIRef | BNode | Literal]
 

@@ -1,2 +1,5 @@
-fictional_companies
-Which employees of NovaTech Solutions work on projects commissioned by BlueHarbor Logistics?
+fictional_companies
+What clients does Blue Harbor Logistics have?
+2
+gpt-4.1
+http://localhost:7200

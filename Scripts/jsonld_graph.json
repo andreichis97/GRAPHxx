@@ -1,94 +1,75 @@
 [
     {
-        "@id": "https://schema.org#Offer",
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        "@id": "http://www.example.org#RobertMann",
+        "http://www.example.org#owns": [
             {
-                "@id": "https://schema.org#Thing"
+                "@id": "http://www.example.org#RexCorp"
             }
-        ]
-    },
-    {
-        "@id": "https://schema.org#Hospital",
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-            {
-                "@id": "https://schema.org#Thing"
-            }
-        ]
-    },
-    {
-        "@id": "https://schema.org#Service",
-        "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-            {
-                "@id": "https://schema.org#Thing"
-            }
-        ]
-    },
-    {
-        "@id": "http://www.example.org#StJohnHospital",
-        "@type": [
-            "https://schema.org#Hospital"
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@value": "St. John Hospital"
-            }
-        ],
-        "https://schema.org#email": [
-            {
-                "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "office@stjohnhospital.com"
-            }
-        ],
-        "https://schema.org#offers": [
-            {
-                "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b1"
-            }
-        ],
-        "https://schema.org#url": [
-            {
-                "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "https://www.stjohnhospital.com"
+                "@value": "Robert Mann"
             }
         ]
     },
     {
-        "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b1",
-        "@type": [
-            "https://schema.org#Offer"
-        ],
-        "https://schema.org#currency": [
+        "@id": "http://www.example.org#RexCorp",
+        "http://www.example.org#locatedIn": [
             {
-                "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "USD"
+                "@id": "_:ne2b16ac905254c7ca6788530689c87c1b1"
             }
         ],
-        "https://schema.org#itemOffered": [
+        "http://www.w3.org/2000/01/rdf-schema#label": [
             {
-                "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b2"
-            }
-        ],
-        "https://schema.org#price": [
-            {
-                "@type": "http://www.w3.org/2001/XMLSchema#decimal",
-                "@value": "300"
+                "@value": "Rex Corporation"
             }
         ]
     },
     {
-        "@id": "_:n4c869149750d4a8ba5414ec2a22156a1b2",
-        "@type": [
-            "https://schema.org#Service"
-        ],
-        "https://schema.org#category": [
+        "@id": "_:ne2b16ac905254c7ca6788530689c87c1b1",
+        "http://www.example.org#address": [
             {
                 "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "Screening services"
+                "@value": "Martin Luther King Street"
             }
         ],
-        "https://schema.org#name": [
+        "http://www.example.org#city": [
             {
-                "@type": "http://www.w3.org/2001/XMLSchema#string",
-                "@value": "Mental disease screening"
+                "@id": "http://www.example.org#LosAngeles"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#Anna",
+        "http://www.example.org#knows": [
+            {
+                "@id": "http://www.example.org#John"
+            }
+        ],
+        "http://www.example.org#worksFor": [
+            {
+                "@id": "http://www.example.org#RexCorp"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Anna"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#John",
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "John"
+            }
+        ]
+    },
+    {
+        "@id": "http://www.example.org#LosAngeles",
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Los Angeles"
             }
         ]
     }

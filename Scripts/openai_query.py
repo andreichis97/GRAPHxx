@@ -1,10 +1,12 @@
+from paths import SCRIPTS_DIR
+
 from SPARQLWrapper import SPARQLWrapper, JSON
 
-with open("D://Andrei//ModellingTools//Graph_Modelling_Tool//Scripts//chat_gpt_query_prompt.txt", "r") as readFile:
+with open(SCRIPTS_DIR / "chat_gpt_query_prompt.txt", "r") as readFile:
     fileContent = readFile.readlines()
     repositoryName = fileContent[0].strip()
-    prompt = f"'{fileContent[2].strip()}'"
-    endpoint_url = fileContent[4].strip()
+    prompt = f"'{fileContent[1].strip()}'"
+    endpoint_url = fileContent[2].strip()
 
 print(prompt)
 print(repositoryName)
@@ -55,7 +57,7 @@ sparql.setReturnFormat(JSON)
 results = sparql.query().convert()
 
 # Loop through the results and write the answers to the output file
-with open("D://Andrei//ModellingTools//Graph_Modelling_Tool//Scripts//openai_query_results.txt", "w") as writeFile:
+with open(SCRIPTS_DIR / "openai_query_results.txt", "w") as writeFile:
     for result in results["results"]["bindings"]:
         answer = result["answer"]["value"]
         writeFile.write(f"{answer}")

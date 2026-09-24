@@ -1,11 +1,7 @@
-fictional_companies
-PREFIX ex: <http://example.org/business#>
-CONSTRUCT
-{
-    ?s ex:keyAsset ?o.
-}
+testing_graphxx
+SELECT *
 WHERE
 {
-    ?s ex:worksFor ?x.
-    ?x ex:providesServicesTo ?o.
-}
+?s ?p ?o
+}
+http://localhost:7200
