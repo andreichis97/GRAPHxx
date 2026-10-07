@@ -211,7 +211,6 @@ class Repository:
                     add(terms["bo"], terms["bo2"], terms["bo3"])
         return triples, neighbors
 
-
 class EntitiesOfInterest(BaseModel):
     entities_of_interest: list[str] = Field(description=
         "Explicit names, labels, or identifiers copied from the question, deduplicated.")
@@ -409,8 +408,8 @@ def main() -> int:
                         help="GraphDB base URL; defaults to Config.graphdb_url. A full --repository-url takes precedence.")
     parser.add_argument("--hops", type=int, default=Config.hops)
     parser.add_argument("--top-k", type=int, default=5)
-    parser.add_argument("--semantic-threshold", type=float, default=0.8)
-    parser.add_argument("--lexical-threshold", type=float, default=0.9)
+    parser.add_argument("--semantic-threshold", type=float, default=0.7)
+    parser.add_argument("--lexical-threshold", type=float, default=0.8)
     parser.add_argument("--chat-model", default=Config.chat_model)
     parser.add_argument("--embedding-model", default="text-embedding-3-small")
     parser.add_argument("--timeout", type=int, default=60)

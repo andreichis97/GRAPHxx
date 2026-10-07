@@ -1,22 +1,50 @@
-PREFIX|:|http://www.example.org#
-PREFIX|xsd:|http://www.w3.org/2001/XMLSchema#
+PREFIX|ex:|http://example.org/
 PREFIX|rdf:|http://www.w3.org/1999/02/22-rdf-syntax-ns#
 PREFIX|rdfs:|http://www.w3.org/2000/01/rdf-schema#
-PREFIX|schema:|https://schema.org/
-PREFIX|brh:|http://example.org/brain-health#
-NODE|IRI|ThingIdentifier|:DM_Logistics|:|DM_Logistics
-NODE|IRI|ThingIdentifier|:John_Reyes|:|John_Reyes
-NODE|IRI|ThingIdentifier|:Los_Angeles|:|Los_Angeles
-NODE|IRI|ThingIdentifier|:Regional_manager|:|Regional_manager
-NODE|IRI|ThingIdentifier|brh:Patient_eleanor_reyes|brh:|Patient_eleanor_reyes
-NODE|BNODE|HelperNode|node1|-|node1
-NODE|IRI|ThingType|schema:Person|schema:|Person
-ATTRIBUTE|brh:Patient_eleanor_reyes|ThingIdentifier|:age|:|age|55|xsd:integer|-
-ATTRIBUTE|brh:Patient_eleanor_reyes|ThingIdentifier|:height|:|height|168.0|xsd:float|-
-ATTRIBUTE|brh:Patient_eleanor_reyes|ThingIdentifier|rdfs:label|rdfs:|label|Eleanor Reyes|-|-
-EDGE|brh:Patient_eleanor_reyes|ThingIdentifier|:John_Reyes|ThingIdentifier|:marriedTo|:|marriedTo|GENERIC
-EDGE|brh:Patient_eleanor_reyes|ThingIdentifier|node1|HelperNode|:works|:|works|GENERIC
-EDGE|brh:Patient_eleanor_reyes|ThingIdentifier|schema:Person|ThingType|rdf:type|rdf:|type|TYPE
-EDGE|node1|HelperNode|:Los_Angeles|ThingIdentifier|:city|:|city|GENERIC
-EDGE|node1|HelperNode|:DM_Logistics|ThingIdentifier|:company|:|company|GENERIC
-EDGE|node1|HelperNode|:Regional_manager|ThingIdentifier|:role|:|role|GENERIC
+PREFIX|xsd:|http://www.w3.org/2001/XMLSchema#
+NODE|IRI|ThingIdentifier|ex:AIProject|ex:|AIProject
+NODE|IRI|ThingIdentifier|ex:Alice|ex:|Alice
+NODE|IRI|ThingIdentifier|ex:BlockchainProject|ex:|BlockchainProject
+NODE|IRI|ThingIdentifier|ex:Bob|ex:|Bob
+NODE|IRI|ThingIdentifier|ex:Charlie|ex:|Charlie
+NODE|IRI|ThingIdentifier|ex:InnovateInc|ex:|InnovateInc
+NODE|IRI|ThingType|ex:Organization|ex:|Organization
+NODE|IRI|ThingType|ex:Person|ex:|Person
+NODE|IRI|ThingType|ex:Project|ex:|Project
+NODE|IRI|ThingIdentifier|ex:TechCorp|ex:|TechCorp
+NODE|IRI|Property|ex:age|ex:|age
+NODE|IRI|Property|ex:collaboratesWith|ex:|collaboratesWith
+NODE|IRI|Property|ex:projectName|ex:|projectName
+NODE|IRI|Property|ex:worksFor|ex:|worksFor
+NODE|IRI|Property|ex:worksOn|ex:|worksOn
+NODE|IRI|ThingType|rdf:Property|rdf:|Property
+NODE|IRI|ThingType|rdfs:Class|rdfs:|Class
+ATTRIBUTE|ex:AIProject|ThingIdentifier|ex:projectName|ex:|projectName|Enterprise AI Assistant|-|-
+ATTRIBUTE|ex:AIProject|ThingIdentifier|rdfs:label|rdfs:|label|AI Project|-|-
+ATTRIBUTE|ex:Alice|ThingIdentifier|ex:age|ex:|age|32|xsd:integer|-
+ATTRIBUTE|ex:Alice|ThingIdentifier|rdfs:label|rdfs:|label|Alice Smith|-|-
+ATTRIBUTE|ex:Bob|ThingIdentifier|ex:age|ex:|age|29|xsd:integer|-
+ATTRIBUTE|ex:Bob|ThingIdentifier|rdfs:label|rdfs:|label|Bob Johnson|-|-
+ATTRIBUTE|ex:Charlie|ThingIdentifier|ex:age|ex:|age|35|xsd:integer|-
+ATTRIBUTE|ex:Charlie|ThingIdentifier|rdfs:label|rdfs:|label|Charlie Davis|-|-
+ATTRIBUTE|ex:TechCorp|ThingIdentifier|rdfs:label|rdfs:|label|TechCorp|-|-
+EDGE|ex:AIProject|ThingIdentifier|ex:Project|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:Alice|ThingIdentifier|ex:Bob|ThingIdentifier|ex:collaboratesWith|ex:|collaboratesWith|GENERIC
+EDGE|ex:Alice|ThingIdentifier|ex:TechCorp|ThingIdentifier|ex:worksFor|ex:|worksFor|GENERIC
+EDGE|ex:Alice|ThingIdentifier|ex:AIProject|ThingIdentifier|ex:worksOn|ex:|worksOn|GENERIC
+EDGE|ex:Alice|ThingIdentifier|ex:Person|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:Bob|ThingIdentifier|ex:TechCorp|ThingIdentifier|ex:worksFor|ex:|worksFor|GENERIC
+EDGE|ex:Bob|ThingIdentifier|ex:AIProject|ThingIdentifier|ex:worksOn|ex:|worksOn|GENERIC
+EDGE|ex:Bob|ThingIdentifier|ex:Person|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:Charlie|ThingIdentifier|ex:InnovateInc|ThingIdentifier|ex:worksFor|ex:|worksFor|GENERIC
+EDGE|ex:Charlie|ThingIdentifier|ex:BlockchainProject|ThingIdentifier|ex:worksOn|ex:|worksOn|GENERIC
+EDGE|ex:Charlie|ThingIdentifier|ex:Person|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:Organization|ThingType|rdfs:Class|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:Person|ThingType|rdfs:Class|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:Project|ThingType|rdfs:Class|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:TechCorp|ThingIdentifier|ex:Organization|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:age|Property|rdf:Property|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:collaboratesWith|Property|rdf:Property|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:projectName|Property|rdf:Property|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:worksFor|Property|rdf:Property|ThingType|rdf:type|rdf:|type|TYPE
+EDGE|ex:worksOn|Property|rdf:Property|ThingType|rdf:type|rdf:|type|TYPE

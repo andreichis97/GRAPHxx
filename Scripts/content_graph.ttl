@@ -5,14 +5,5 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix schema: <https://schema.org/>.
 
-:Anna rdfs:label "Anna".
-:John rdfs:label "John".
-:RexCorp rdfs:label "Rex Corporation".
-:LosAngeles rdfs:label "Los Angeles".
-:RobertMann rdfs:label "Robert Mann".
-:Anna :knows :John.
-:Anna :worksFor :RexCorp.
-:RexCorp :locatedIn _:node1.
-_:node1 :city :LosAngeles.
-_:node1 :address "Martin Luther King Street"^^xsd:string.
-:RobertMann :owns :RexCorp.
+_:node1 :rel1 _:node2.
+_:node2 :rel2 _:node3.

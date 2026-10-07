@@ -1,19 +1,45 @@
-@prefix : <http://www.example.org#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ex: <http://example.org/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-:TGraph
+ex:RandomStuff
 {
-_:node123 owl:unionOf ( :Person  :Organization ).
-:FriendsGroup rdfs:member :Mike.
-:FriendsGroup rdfs:member :Anna.
-:Tom a :Person.
-:Person rdfs:subClassOf rdfs:Resource.
-:Tom :knows :FriendsGroup.
-:hasChild owl:inverseOf :hasParent.
-:hasIdentifier a rdf:Property.
-_:node123 a owl:Class.
-:hasIdentifier rdfs:domain _:node123.
-:hasIdentifier rdfs:range :Identifier.
+ex:AIProject rdfs:label "AI Project".
+ex:AIProject ex:projectName "Enterprise AI Assistant".
+ex:Alice rdfs:label "Alice Smith".
+ex:Alice ex:age "32"^^xsd:integer.
+ex:Bob rdfs:label "Bob Johnson".
+ex:Bob ex:age "29"^^xsd:integer.
+ex:Charlie rdfs:label "Charlie Davis".
+ex:Charlie ex:age "35"^^xsd:integer.
+ex:TechCorp rdfs:label "TechCorp".
+ex:Iliescu rdfs:label "Ion Iliescu".
+ex:Basescu rdfs:label "Traian Basescu".
+ex:Iohannis rdfs:label "Klaus Iohannis".
+ex:RomanianPresidents rdfs:label "Romanian presidents list".
+ex:RomanianPresidents :hasMember ex:Iliescu.
+ex:RomanianPresidents :hasMember ex:Basescu.
+ex:RomanianPresidents :hasMember ex:Iohannis.
+ex:AIProject a ex:Project.
+ex:Alice ex:collaboratesWith ex:Bob.
+ex:Alice ex:worksFor ex:TechCorp.
+ex:Alice ex:worksOn ex:AIProject.
+ex:Alice a ex:Person.
+ex:Bob ex:worksFor ex:TechCorp.
+ex:Bob ex:worksOn ex:AIProject.
+ex:Bob a ex:Person.
+ex:Charlie ex:worksFor ex:InnovateInc.
+ex:Charlie ex:worksOn ex:BlockchainProject.
+ex:Charlie a ex:Person.
+ex:Organization a rdfs:Class.
+ex:Person a rdfs:Class.
+ex:Project a rdfs:Class.
+ex:TechCorp a ex:Organization.
+ex:age a rdf:Property.
+ex:collaboratesWith a rdf:Property.
+ex:projectName a rdf:Property.
+ex:worksFor a rdf:Property.
+ex:worksOn a rdf:Property.
+ex:Charlie ex:knows ex:RomanianPresidents.
 }
