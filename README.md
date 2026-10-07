@@ -6,7 +6,7 @@ The implementation available in this repository is fully compatible with Windows
 
 Repository contents
 
-GRAPHxx_v11_stable.abl — the modeling library to import into ADOxx.
+GRAPHxx_v12_stable.abl — the modeling library to import into ADOxx.
 
 Scripts/ — the .asc and .py files implementing the tool's functionality, together with their supporting files.
 requirements.txt — containing the Python dependencies to install before using the Python-based functionality is included in Scripts/
