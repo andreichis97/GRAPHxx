@@ -5,5 +5,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix schema: <https://schema.org/>.
 
-_:node1 :rel1 _:node2.
-_:node2 :rel2 _:node3.
+:DD :worksFor [schema:legalName "OCorp"^^xsd:string; :foundedIn "2025"^^xsd:integer; :supplierOf ACorp; a schema:Company; ].
+:DD :worksFor _:node1.
+_:node1 schema:legalName "OCorp"^^xsd:string.
+_:node1 :foundedIn "2025"^^xsd:integer.
+_:node1 :supplierOf :ACorp.
+_:node1 a schema:Company.
